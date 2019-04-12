@@ -1,0 +1,27 @@
+body {
+    background-color: #222;
+}
+
+#colors {
+    margin: 15vh 0 5vh;
+    text-align: center;
+}
+
+.color {
+    height: 25vh;
+    width: 25vh;
+    margin: 2vh;
+    border-radius: 100vh;
+    display: inline-block;
+    box-shadow: 0 .4vh .7vh .2vh #111;
+}
+
+#info {
+    width: 100vw;
+    font-size: 5vh;
+    color: gainsboro;
+}
+
+#code {
+    font-family: monospace;
+}
