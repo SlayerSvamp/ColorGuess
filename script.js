@@ -6,10 +6,14 @@ function start() {
     alertbox.setAttribute("hidden", null);
     gamebox.removeAttribute("hidden");
     game.score = 0;
+    game.playing = true;
     next();
 }
 
 function next() {
+    if(!game.playing)
+        return;
+
     let color = [get_color(), get_color(), get_color()];
     game.correct = Math.floor(Math.random() * 3);
     code.innerHTML = color[game.correct];
@@ -25,6 +29,7 @@ function next() {
 }
 
 function end() {
+    game.playing = false;
     alertbox.removeAttribute("hidden");
     gamebox.setAttribute("hidden", null);
 }

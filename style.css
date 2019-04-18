@@ -18,6 +18,22 @@ body {
     color: gainsboro;
 }
 
+#score {
+    font-size: 1.3em;
+}
+
+#score::before {
+    content: "Score: "
+}
+
+#maxscore {
+    font-size: .75em;
+}
+
+#maxscore::before {
+    content: "Max score: "
+}
+
 #colors>div {
     margin: var(--margin);
     height: var(--size);
