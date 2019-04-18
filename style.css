@@ -1,27 +1,43 @@
+:root {
+    --size: 25vh;
+    --margin: 2vh;
+}
+
+@media (orientation:portrait) {
+    :root {
+        --size: 25vw;
+        --margin: 2vw;
+    }
+}
+
 body {
     background-color: #222;
-}
-
-#colors {
-    margin: 15vh 0 5vh;
+    font-size: 2em;
+    font-family: monospace;
     text-align: center;
-}
-
-.color {
-    height: 25vh;
-    width: 25vh;
-    margin: 2vh;
-    border-radius: 100vh;
-    display: inline-block;
-    box-shadow: 0 .4vh .7vh .2vh #111;
-}
-
-#info {
-    width: 100vw;
-    font-size: 5vh;
     color: gainsboro;
 }
 
-#code {
-    font-family: monospace;
+#colors>div {
+    margin: var(--margin);
+    height: var(--size);
+    width: var(--size);
+    border-radius: var(--size);
+    display: inline-block;
+    cursor: pointer;
+    box-shadow: 0 .4vh 0.7vh 0.2vh #111;
+}
+
+#code,
+#alertbox {
+    width: calc(var(--size) * 3 + var(--margin) * 4);
+    border-color: black;
+    margin: 5vh auto;
+    background-color: rgba(0, 0, 0, .3);
+    padding: .2em;
+}
+
+#alertbox>a {
+    cursor: pointer;
+    font-weight: bold;
 }

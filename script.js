@@ -1,6 +1,10 @@
-var game = { max: 0 };
+var game = {
+    max: 0
+};
 
 function start() {
+    alertbox.setAttribute("hidden", null);
+    gamebox.removeAttribute("hidden");
     game.score = 0;
     next();
 }
@@ -14,23 +18,25 @@ function next() {
     colors.innerHTML = "";
     for (let i in color) {
         let e = document.createElement("div");
-        e.className = "color";
         e.onclick = () => guess(i);
         e.style = `background-color: ${color[i]}`;
         colors.appendChild(e);
     }
 }
 
+function end() {
+    alertbox.removeAttribute("hidden");
+    gamebox.setAttribute("hidden", null);
+}
+
 function guess(value) {
-    if(game.correct == value)
-    {
+    if (game.correct == value) {
         game.score++;
         if (game.score > game.max)
             game.max = game.score;
         next();
-    }
-    else
-        start();
+    } else
+        end();
 }
 let get_color = () => `rgb(${rand()}, ${rand()}, ${rand()})`;
 
